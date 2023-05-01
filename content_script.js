@@ -30,6 +30,26 @@ function removeVisitedBanner() {
   }
 }
 
-chrome.runtime.sendMessage({ type: "checkChannel" }, (response) => {
-  if (response.isVisited) addVisitedBanner(response.name, response.notes);
-});
+function checkChannel() {
+  removeVisitedBanner();
+  chrome.runtime.sendMessage({ type: "checkChannel" }, (response) => {
+    if (response.isVisited) {
+      addVisitedBanner(response.name, response.notes);
+    }
+  });
+}
+
+// Call checkChannel on initial page load
+checkChannel();
+
+// Set up a setInterval to periodically check for URL changes
+let currentUrl = window.location.href;
+setInterval(() => {
+  const newUrl = window.location.href;
+  if (newUrl !== currentUrl) {
+    currentUrl = newUrl;
+    if (newUrl.includes("twitch.tv") && newUrl.split("/").length === 4) {
+      checkChannel();
+    }
+  }
+}, 1000);
