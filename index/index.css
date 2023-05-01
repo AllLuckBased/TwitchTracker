@@ -1,0 +1,73 @@
+/* General styles for dark mode */
+body {
+	background-color: #333;
+	font-size: 20px;
+	color: #fff;
+	margin: 100px
+}
+
+/* Container and Legend styles */
+.container {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 200px
+}
+
+.legend {
+	padding: 3em;
+	border: 3px solid #ccc;
+	border-radius: 15px;
+	background-color: #444;
+	color: #fff;
+}
+
+/* Form styles */
+input[type="text"] {
+	background-color: #555;
+	color: #fff;
+	border: 1px solid #777;
+}
+
+button[type="submit"] {
+	background-color: #555;
+	color: #fff;
+	border: 1px solid #777;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #666;
+	border-color: #888;
+}
+
+/* Pre tag styles */
+pre {
+	background-color: #444;
+	padding: 1em;
+	border-radius: 5px;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 200px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position the tooltip above the text */
+	left: 50%;
+	margin-left: -100px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}

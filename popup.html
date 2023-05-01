@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Channel Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <a href="index/index.html" target="_blank">
+    <h1>Twitch Channel Tracker</h1>
+  </a>
+  <form id="channel-form">
+    <label for="name">Name:</label>
+    <div id="channel-name"></div>
+    <br>
+    <label for="value">Familiarity:</label>
+    <input type="radio" id="value0" name="value" value="0" required>
+    <label for="value0">0</label>
+    <input type="radio" id="value1" name="value" value="1">
+    <label for="value1">1</label>
+    <input type="radio" id="value2" name="value" value="2">
+    <label for="value2">2</label>
+    <input type="radio" id="value3" name="value" value="3">
+    <label for="value3">3</label>
+    <input type="radio" id="value4" name="value" value="4">
+    <label for="value4">4</label>
+    <input type="radio" id="value5" name="value" value="5">
+    <label for="value5">5</label>
+	<br>
+	<label for="notes">Notes:</label>
+	<input type="text" id="notes">
+    <br><br>
+    <button type="submit">Add Channel</button>
+  </form>
+  <script src="popup.js"></script>
+</body>
+</html>

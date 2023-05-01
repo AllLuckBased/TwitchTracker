@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Storage</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Map Storage</h1>
+    <div class="container">
+        <div>
+            <form id="map-form">
+				<label for="key">Key:</label>
+				<input type="text" id="key" required>
+				<label for="value">Value:</label>
+				<input type="text" id="value" required>
+				<label for="notes">Notes (optional):</label>
+				<input type="text" id="notes">
+				<button type="submit">Insert/Update</button>
+			</form>
+            <h2>Stored Map:</h2>
+			<div>
+  			    <label for="search">Search channel:</label>
+			    <input type="text" id="search">
+			    <button id="search-btn">Search</button>
+			</div>
+            <pre id="output"></pre>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
