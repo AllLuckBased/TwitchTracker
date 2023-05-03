@@ -21,7 +21,16 @@
                     <label for="notes">Notes (optional):</label>
                     <textarea name="myTextarea" rows="2" cols="40" id="notes"></textarea><br>
                     <button type="submit">Insert/Update</button>
-                </form>
+                </form><br><br>
+                <div>
+                    <label for="sort-method">Sort by:</label>
+                    <select id="sort-method">
+                      <option value="last-updated">Last Updated</option>
+                      <option value="familiarity">Familiarity</option>
+                    </select>
+                    <button id="sort-btn">Sort</button>
+                </div>
+                <span id="tooltip" class="tooltiptext"></span>
             </section>
             <section class="output-section">
                 <h2>Stored Data:</h2>

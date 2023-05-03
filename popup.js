@@ -17,10 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
               break;
             }
           }
-		  const notesInput = document.getElementById("notes");
-		  if (map[channelName].hasOwnProperty("notes")) {
-		    notesInput.value = map[channelName].notes;
-		  }
+          const notesInput = document.getElementById("notes");
+          if (map[channelName].hasOwnProperty("notes")) {
+            notesInput.value = map[channelName].notes;
+          }
+          
+          const followCheckbox = document.getElementById("follow");
+          if (map[channelName].hasOwnProperty("follow")) {
+            followCheckbox.checked = map[channelName].follow;
+          }
           const submitButton = document.querySelector('button[type="submit"]');
           submitButton.innerHTML = "Update Channel";
         }
@@ -40,12 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (url.includes("twitch.tv") && url.split("/").length == 4) {
         const channelName = url.split("/")[3].split("?")[0];
         const selectedValue = document.querySelector('input[name="value"]:checked').value;
-		const notes = document.querySelector('#notes').value;
+		    const notes = document.querySelector('#notes').value;
+        const follow = document.querySelector('#follow').checked;
         chrome.storage.local.get("map", ({ map }) => {
           if (!map) {
             map = {};
           }
-          map[channelName] = { value: selectedValue, notes };
+          map[channelName] = { value: selectedValue, notes, follow, updated: new Date().toLocaleString() };
           chrome.storage.local.set({ map }, () => {
             const submitButton = document.querySelector('button[type="submit"]');
             submitButton.innerHTML = "Update Channel";
